@@ -1,5 +1,5 @@
 
-# 1) Online Clinic Management System Project In Php
+# 1) Online Clinic Management System Project in PHP
 
 
 
