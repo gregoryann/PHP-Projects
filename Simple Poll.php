@@ -30,3 +30,17 @@
 			$db_name = 'dw'; 
 // connect to database
 $db = mysqli_connect ($db_host, $db_user, $db_password, $db_name) OR die ('Could not connect to MySQL: ' . mysqli_connect_error());
+
+	                 // has a vote occurred?
+			if(isset($_POST['submit']))
+			{
+				$error = array();
+				
+				// let's make sure they voted
+			 	if(empty($_POST['nextpresident']))
+				{
+					$error['vote'] = 'You must vote. It is part of your civic responsibility.';	
+				}
+				
+				// if no errors
+				if(sizeof($error) == 0)
