@@ -44,3 +44,15 @@ $db = mysqli_connect ($db_host, $db_user, $db_password, $db_name) OR die ('Could
 				
 				// if no errors
 				if(sizeof($error) == 0)
+					
+					
+					
+					// insert the vote
+					$sql = "INSERT INTO poll (
+								vote_id, 
+								vote
+							) VALUES (
+								null, 
+								'{$_POST['nextpresident']}'
+							)";
+					mysqli_query($db, $sql);
