@@ -28,3 +28,5 @@
 			$db_password = '';
 			$db_host = 'localhost';
 			$db_name = 'dw'; 
+// connect to database
+$db = mysqli_connect ($db_host, $db_user, $db_password, $db_name) OR die ('Could not connect to MySQL: ' . mysqli_connect_error());
