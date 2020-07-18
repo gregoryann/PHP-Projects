@@ -76,7 +76,15 @@ $db = mysqli_connect ($db_host, $db_user, $db_password, $db_name) OR die ('Could
 					$row = mysqli_fetch_assoc($result);
 					$numhillary = $row['numvotes'];
 				
-				// display raw number of votes
+				        // display raw number of votes
 					echo "<p>Trump: {$numtrump}</p>";
 					echo "<p>Bernie: {$numbernie}</p>";
 					echo "<p>Hillary: {$numhillary}</p>";
+				
+				        // get the total number of votes
+					$total = $numtrump + $numbernie + $numhillary;
+					
+					// calculate the percentages for each candidate
+					$percentagetrump = ($numtrump / $total) * 100;
+					$percentagebernie = ($numbernie / $total) * 100;
+					$percentagehillary = ($numhillary / $total) * 100;
