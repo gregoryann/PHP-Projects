@@ -56,3 +56,27 @@ $db = mysqli_connect ($db_host, $db_user, $db_password, $db_name) OR die ('Could
 								'{$_POST['nextpresident']}'
 							)";
 					mysqli_query($db, $sql);
+				
+				// how many votes for trump?
+					$sql = "SELECT COUNT(*) AS numvotes FROM poll WHERE vote = 'Trump'";
+					$result = mysqli_query($db, $sql);
+					$row = mysqli_fetch_assoc($result);
+					$numtrump = $row['numvotes'];
+					
+					// how many votes for bernie?
+					$sql = "SELECT COUNT(*) AS numvotes FROM poll WHERE vote = 'Bernie'";
+					$result = mysqli_query($db, $sql);
+					$row = mysqli_fetch_assoc($result);
+					$numbernie = $row['numvotes'];
+					
+					
+					// how many votes for hillary?
+					$sql = "SELECT COUNT(*) AS numvotes FROM poll WHERE vote = 'Hillary'";
+					$result = mysqli_query($db, $sql);
+					$row = mysqli_fetch_assoc($result);
+					$numhillary = $row['numvotes'];
+				
+				// display raw number of votes
+					echo "<p>Trump: {$numtrump}</p>";
+					echo "<p>Bernie: {$numbernie}</p>";
+					echo "<p>Hillary: {$numhillary}</p>";
