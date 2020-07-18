@@ -15,3 +15,10 @@
 			}
 		</style>
 	</head>
+<body>
+		
+		
+		<?php
+
+			// suppress error notices
+			error_reporting(E_ALL & ~E_NOTICE);
