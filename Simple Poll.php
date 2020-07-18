@@ -88,3 +88,26 @@ $db = mysqli_connect ($db_host, $db_user, $db_password, $db_name) OR die ('Could
 					$percentagetrump = ($numtrump / $total) * 100;
 					$percentagebernie = ($numbernie / $total) * 100;
 					$percentagehillary = ($numhillary / $total) * 100;
+				
+				// display the percentages as text
+					echo "<p>Trump: {$percentagetrump}%</p>";
+					echo "<p>Bernie: {$percentagebernie}%</p>";
+					echo "<p>Hillary: {$percentagehillary}%</p>";
+					// display the percentages as bar graphs
+					echo "<h1>Trump</h1>";
+					echo "<div class=\"outer\">";
+					echo "<div class=\"inner\" style=\"width: {$percentagetrump}%\"></div>";
+					echo "</div>";
+					
+					echo "<h1>Bernie</h1>";
+					echo "<div class=\"outer\">";
+					echo "<div class=\"inner\" style=\"width: {$percentagebernie}%\"></div>";
+					echo "</div>";
+					
+					echo "<h1>Hillary</h1>";
+					echo "<div class=\"outer\">";
+					echo "<div class=\"inner\" style=\"width: {$percentagehillary}%\"></div>";
+					echo "</div>";	
+				}	
+			}
+		?>
