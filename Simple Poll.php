@@ -111,3 +111,22 @@ $db = mysqli_connect ($db_host, $db_user, $db_password, $db_name) OR die ('Could
 				}	
 			}
 		?>
+	
+	<?php
+
+			// display error if necessary
+			if($error['vote'])
+			{
+				echo $error['vote'];	
+			}
+		?>
+		
+		<form method="post" action="poll.php">
+			<label>Who is going to be the next president?</label><br />
+			<input name="nextpresident" type="radio" value="Trump" />Trump<br />
+			<input name="nextpresident" type="radio" value="Bernie" />Bernie<br />
+			<input name="nextpresident" type="radio" value="Hillary" />Hillary<br />
+			<input name="submit" type="submit" value="Vote" />
+		</form>
+		
+	</body>
