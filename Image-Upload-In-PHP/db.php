@@ -25,3 +25,13 @@ class DB {
         $statement = $this->conn->prepare($query);
         $statement->execute(['id' => $id, 'pic' => $pic]);
       }
+
+      // Fetching Image
+  public function getProfilePic($id) {
+    $query = "SELECT * FROM profilepic WHERE id = :id";
+    $statement = $this->conn->prepare($query);
+    $statement->execute(['id' => $id]);
+    $data = $statement->fetch();
+    return $data;
+  }
+}
