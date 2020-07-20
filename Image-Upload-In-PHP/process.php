@@ -39,3 +39,8 @@ if(isset($_POST['submit'])) {
   }
 }
 
+// Check whether profile pic already exists
+
+function checkExistingPic($id, $db) {
+    return $db->getProfilePic($id);
+  }
