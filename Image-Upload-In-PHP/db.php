@@ -18,3 +18,10 @@ class DB {
     $statement = $this->conn->prepare($query);
     $statement->execute(['id' => $id, 'profilepic' => $pic]);
   }
+
+    // Updating Image
+    public function changePic($id, $pic) {
+        $query = "UPDATE profilepic SET profilepic = :pic WHERE id = :id";
+        $statement = $this->conn->prepare($query);
+        $statement->execute(['id' => $id, 'pic' => $pic]);
+      }
